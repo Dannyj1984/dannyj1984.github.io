@@ -4,7 +4,7 @@ const TGAbxApp = "TG-ABX-App-v1"
 const assets = [
   "/",
   "/index.html",
-  "/css/style.css",
+  "/css",
   "/js/app.js",
   "/images/assets",
   "/images/icons/icon-72x72.png",
