@@ -7,7 +7,7 @@ const assets = [
   "/css/style.css",
   "/css/styles.css",
   // "/js/app.js",
-  // "/images/assets",
+  "/images/assets",
   // "/images/icons/icon-72x72.png",
   // "/images/icons/icon-96x96.png",
   // "/images/icons/icon-128x128.png",
