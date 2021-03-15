@@ -8,6 +8,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="Antibiotics Guidelines web app for Tameside and Glossop" />
         <meta name="author" content="Danny Jebb" />
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="Tameside and Glossop antibiotics guidelines">
         <title>T&G Antibiotics Guidelines Web App</title>
 
         <link rel="manifest" href="/manifest.json" />
@@ -66,6 +70,7 @@ Prophylaxis
 <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" /><!-- Core theme CSS (includes Bootstrap)-->
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" /><!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/fontawesome.min.css">-->
 <link href="https://www.tamesideandglossopccg.org/getmedia/72509ea0-1785-47cf-a42c-291a4847ca0c/styles.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="add-to-homescreen-master/add-to-homescreen-master/style/addtohomescreen.css" />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" rel="stylesheet" />
 <header class="masthead bg-primary text-white text-center mt-2 px-0" id="page-top">
 <style type="text/css">.modal {
@@ -14769,5 +14774,17 @@ As this is a sexually transmitted infection treatment of the partner is importan
  }
 </script>
 
+<script type="text/javascript" src="add-to-homescreen-master/add-to-homescreen-master/src/addtohomescreen.js"></script>
+
+
+<script> 
+    if((("standalone" in Window.navigator) 
+    && !window.navigator.standalone) 
+    || 
+    ( !window.matchMedia('(display-mode: standalone)').matches )
+    ) {
+        addToHomescreen();
+    }
+</script>
 </body>
 </html>
