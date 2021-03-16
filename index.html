@@ -83,9 +83,52 @@ Prophylaxis
     }
 </style>
 
+
+
 </head>
 
 <body>
+
+    <!--Page load Information popup-->
+    <div aria-hidden="true" aria-labelledby="HCPaedUTILabel" class="portfolio-modal modal fade " id="infoModal" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true"><i class="fas fa-times">&nbsp;</i></span></button> 
+        
+                <div class="modal-body text-center">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-12">
+                                <!-- Portfolio Modal - Title-->
+                                <h3>App info</h3>
+                            </div>
+                            <div  id="appInfoSection">
+                                <div class="modal-body" style="color: black; text-align: center;">
+                                    <h4>New here? Read below on guidance for installing and using this app</h4>
+                                    <h5><u>Android users</u></h5>
+                                    <p>If using Google chrome for your browser, and do not already have the app installed, your phone will show a pop
+                                        up at the bottom of the screen saying Add to home screen. Click this and choose install the install the app on your device. 
+                                        The app will stay up to date and will be available even if you are not connected to the internet.
+                                    </p>
+
+                                    <hr>
+                                    <h5><u>Apple users</u></h5>
+                                    <p>Please use Safari browser to load this page. Once loaded choose the small share icon at the bottom of your screen and select 'Add to home screen.' 
+                                        Once installed the app will stay upto date and will be available if you are not connected to the internet. 
+                                    </p>
+                                    <hr>
+                                    <p>Please see the bottom of this page for a link to a video guide of the above.</p>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary" data-dismiss="modal">Close Window</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 <div class="container d-flex align-items-center flex-column"><!-- Masthead Heading-->
 <h3 class="mb-0">Antibiotic guidelines</h3>
 <!-- Masthead Subheading-->
@@ -1604,7 +1647,8 @@ Prophylaxis
 </div>
 </div>
 <br />
-<!--floating icon--><a class="float" href="#URTI"><i class="fa fa-arrow-up my-float">&nbsp;</i> </a><button class="btn btn-primary" data-dismiss="modal">Close Window</button></div>
+<!--floating icon-->
+<a class="float" href="#URTI"><i class="fa fa-arrow-up my-float">&nbsp;</i> </a><button class="btn btn-primary" data-dismiss="modal">Close Window</button></div>
 </div>
 </div>
 </div>
@@ -14616,7 +14660,19 @@ As this is a sexually transmitted infection treatment of the partner is importan
 <u> <strong><strong> </strong></strong></u></div>
 </div>
 </div>
-<u> <strong><strong> <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script> <!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work --> <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" type="text/javascript"></script> <script type="text/javascript">
+<u> <strong><strong> 
+    
+
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script> 
+    <!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work --> 
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" type="text/javascript"></script> <script type="text/javascript">
+
+
+
+    
+    
     //Primary care section
     //Clicking on managing infection button.
     function closePCGC() {
@@ -14755,12 +14811,20 @@ As this is a sexually transmitted infection treatment of the partner is importan
     d.style.display = "none";
     }
     }
+
+    
+
+    //Load info popup on 3 seconds after page load
+    $(document).ready(function(){
+   setTimeout(function(){
+    $('#infoModal').modal('show');
+   },1000); // 3000 to load it after 3 seconds from page load
+});
     
 
 </script>
 
-<!--floating icon-->
- <a class="float fa fa-arrow-up " href="#page-top"> </a></strong></strong></u>
+
  <script src="/js/app.js"></script>
  <!-- <script>
  if (!navigator.serviceWorker.controller) {
@@ -14769,6 +14833,8 @@ As this is a sexually transmitted infection treatment of the partner is importan
      });
  }
 </script> -->
+
+
 
 
 </body>
