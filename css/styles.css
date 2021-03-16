@@ -11309,3 +11309,15 @@ form .row:first-child .floating-label-form-group {
     word-wrap: break-word;
     word-break: break-word;
 }
+
+pre code {
+    word-break: break-word;
+  }
+  
+  .is-invisible {
+    opacity: 0;
+  }
+  
+  .subscription-details {
+    transition: opacity 1s;
+  }
