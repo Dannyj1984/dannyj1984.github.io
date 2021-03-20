@@ -14814,13 +14814,13 @@ As this is a sexually transmitted infection treatment of the partner is importan
     }
     }
 
-    function closeInfoModal() {
-        if (navigator.standalone) {
-            $('#infoModal').modal('hide');
-         }
-    }   
+    // function closeInfoModal() {
+    //     if (navigator.standalone) {
+    //         $('#infoModal').modal('hide');
+    //      }
+    // }   
 
-    closeInfoModal();
+    // closeInfoModal();
 
     
 
@@ -14830,6 +14830,45 @@ As this is a sexually transmitted infection treatment of the partner is importan
     $('#infoModal').modal('show');
    },1000); // 3000 to load it after 3 seconds from page load
 });
+
+
+//Check if user is using an android webapp  and if so dont show the info modal.
+window.addEventListener('beforeinstallprompt', function(e) {
+    console.log(e.platforms);
+    if(e.platforms == 'android'){
+        $('#infoModal').modal('hide');
+    }
+});
+
+var deferredPrompt; 
+window.addEventListener('beforeinstallprompt', function (e) { 
+    deferredPrompt = e; showAddToHomeScreen(); 
+}); 
+
+function showAddToHomeScreen() { 
+    var a2hsBtn = document.querySelector("#infoModal"); 
+    a2hsBtn.style.display = "block"; 
+    a2hsBtn.addEventListener("click", addToHomeScreen); 
+} 
+
+function addToHomeScreen() { 
+    var a2hsBtn = document.querySelector("#infoModal"); 
+    // hide our user interface that shows our A2HS button 
+    a2hsBtn.style.display = 'none'; 
+    // Show the prompt 
+    deferredPrompt.prompt(); 
+    // Wait for the user to respond to the prompt 
+    deferredPrompt.userChoice .then(function(choiceResult){ 
+        if (choiceResult.outcome === 'accepted') { 
+            console.log('User accepted the A2HS prompt'); 
+        } else { 
+            console.log('User dismissed the A2HS prompt'); 
+        } 
+        deferredPrompt = null; 
+    }); 
+    } 
+
+
     
 
 </script>
