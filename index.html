@@ -90,7 +90,7 @@ Prophylaxis
 <body>
 
     <!--Page load Information popup-->
-    <div aria-hidden="true" aria-labelledby="HCPaedUTILabel" class="portfolio-modal modal fade " id="infoModal" role="dialog" tabindex="-1">
+    <div aria-hidden="true" aria-labelledby="HCPaedUTILabel" class="portfolio-modal modal fade" id="infoModal" role="dialog" tabindex="-1">
         <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
                 <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true"><i class="fas fa-times">&nbsp;</i></span></button> 
@@ -163,7 +163,7 @@ Prophylaxis
 <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
 <div class="portfolio-item-caption-content text-center text-white">&nbsp;</div>
 </div>
-<!--This is the image we use for this view--><img alt="bone" class="img-fluid" src="/images/assets/bone.png" />
+<!--This is the image we use for this view--><img alt="bone" class="img-fluid" src="images/assets/bone.png" />
 <p class="text-center">Bone and Joint</p>
 </div>
 </div>
@@ -3018,7 +3018,7 @@ Prophylaxis
 
 <div aria-labelledby="PCConjPox" class="collapse" data-parent="#PCaccordionConj" id="PCcollapseConj">
 <div class="card-body text-left">
-<p>1st choice&nbsp;<span style="color:#0000AA"><strong>Chloramphenicol 0.5 % eye drops 1 drop 2 hourly </strong></span>for <u>2 days</u>, reducing to<span style="color:#0000AA"><strong> 4 hourly</strong></span> as the infection improves</p>
+<p>1st choice&nbsp;<span style="color:#0000AA"><strong>Chloramphenicol 0.5 % eye drops* 1 drop 2 hourly </strong></span>for <u>2 days</u>, reducing to<span style="color:#0000AA"><strong> 4 hourly</strong></span> as the infection improves</p>
 
 <p><strong>plus </strong></p>
 
@@ -3026,6 +3026,8 @@ Prophylaxis
 
 <p><strong>However treatment with eye drops alone may be sufficient.</strong></p>
 
+<p><strong><span style="color:#ff0000">* Chloramphenicol eye drops and ointment is contra-indicated in patients under 2 years old as it contains boron which may affect future fertility.</span></strong></p>
+<hr>
 <p>2nd choice (ONLY if chloramphenicol not effective or unsuitable)&nbsp;<span style="color:#B22222"><strong>&nbsp;Fusidic acid 1 % eye drops 1 drop BD</strong></span></p>
 
 <p>Continue both for 48 hours after resolution of symptoms</p>
@@ -8491,7 +8493,6 @@ As this is a sexually transmitted infection treatment of the partner is importan
 <h4><strong><strong><a href="#HCAdConjunct">Purulent Conjuctivitis</a></strong></strong></h4>
 </div>
 <br />
-<strong><strong><!--TODO sort out new modal opening--> </strong></strong>
 
 <div class="text-left border border-info rounded" id="HCAdFacCell">
 <h2 class="text-center" id="HCAdFacCellLabel"><strong><strong>Facial / Orbital Cellulitis</strong></strong></h2>
@@ -8504,6 +8505,8 @@ As this is a sexually transmitted infection treatment of the partner is importan
 <h2 class="text-center" id="HCAdDeepNeckLabel"><strong><strong>Purulent Conjuctivitis</strong></strong></h2>
 
 <p><strong><strong>Chloramphenicol eye drops / ointment.</strong></strong></p>
+<p><strong><span style="color:#ff0000">* Chloramphenicol eye drops and ointment is contra-indicated in patients under 2 years old as it contains boron which may affect future fertility.</span></strong></p>
+
 </div>
 <br />
 <strong><strong><!--floating icon--><a class="float" href="#HCAdENTSection"><i class="fa fa-arrow-up my-float">&nbsp;</i> </a><button class="btn btn-primary" data-dismiss="modal">Close Window</button></strong></strong></div>
@@ -11818,6 +11821,8 @@ As this is a sexually transmitted infection treatment of the partner is importan
 <h2 class="text-center" id="HCPaedBacConjunctLabel"><strong><strong>Acute Bacterial Conjunctivitis</strong></strong></h2>
 
 <p><strong><strong><span style="color:#0033cc"><strong>Chloramphenicol eye drops&nbsp;1 drop QDS</strong></span></strong></strong></p>
+<p><strong><span style="color:#ff0000">* Chloramphenicol eye drops and ointment is contra-indicated in patients under 2 years old as it contains boron which may affect future fertility.</span></strong></p>
+
 </div>
 <strong><strong> &nbsp; </strong></strong>
 
@@ -14814,13 +14819,13 @@ As this is a sexually transmitted infection treatment of the partner is importan
     }
     }
 
-    // function closeInfoModal() {
-    //     if (navigator.standalone) {
-    //         $('#infoModal').modal('hide');
-    //      }
-    // }   
+    function closeInfoModal() {
+        if (window.navigator.standalone) {
+            $('#infoModal').modal('hide');
+         }
+    }   
 
-    // closeInfoModal();
+    closeInfoModal();
 
     
 
@@ -14828,17 +14833,23 @@ As this is a sexually transmitted infection treatment of the partner is importan
     $(document).ready(function(){
    setTimeout(function(){
     $('#infoModal').modal('show');
-   },1000); // 3000 to load it after 3 seconds from page load
+   }); // add ,1000 to load it after 1 seconds from page load
 });
 
 
 //Check if user is using an android webapp  and if so dont show the info modal.
-window.addEventListener('beforeinstallprompt', function(e) {
-    console.log(e.platforms);
-    if(e.platforms == 'android'){
-        $('#infoModal').modal('hide');
-    }
-});
+// window.addEventListener('beforeinstallprompt', function(e) {
+//     //console.log(e.platforms);
+//     if(e.platforms == "web"){
+//         $("#infoModal").modal("hide");
+//         console.log("web");
+//     } else {
+//         console.log("Not web");
+//         
+//     }
+// });
+
+
 
 var deferredPrompt; 
 window.addEventListener('beforeinstallprompt', function (e) { 
@@ -14875,16 +14886,6 @@ function addToHomeScreen() {
 
 
  <script src="/js/app.js"></script>
- <!-- <script>
- if (!navigator.serviceWorker.controller) {
-     navigator.serviceWorker.register("/serviceWorker.js").then(function(reg) {
-         console.log("Service worker has been registered");
-     });
- }
-</script> -->
-
-
-
-
+ 
 </body>
 </html>
