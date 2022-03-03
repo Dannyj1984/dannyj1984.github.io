@@ -306,7 +306,7 @@ footer {
 /* Responsiveness */
 @media (min-width: 900px) {
   body {
-    background-image: url('../img/course4.jpg');
+    background-image: url('../img/course4.JPG');
     background-size: 100% 100%;
   }
   .nav{
