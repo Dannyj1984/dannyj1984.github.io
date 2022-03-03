@@ -156,7 +156,7 @@ input[type="checkbox"]:checked ~ .modal-background {
   
     /* Add space between the border and the content */
     padding: 8px;
-  
+    margin: 2rem;
     border-radius: 12px;
   }
   
@@ -178,15 +178,15 @@ input[type="checkbox"]:checked ~ .modal-background {
   /* Style button element */
   button {
     border: 1px solid #9dd1ff;
-  border-radius: 10px;
-  color: #348efe;
-  display: inline-flex;
-  padding: 15px 35px;
-  text-decoration: none;
-  transition: background-color 200ms ease-in-out;
-  align-items: center;
-  margin:1rem 0rem;
-  cursor: pointer;
+    border-radius: 10px;
+    color: #348efe;
+    display: inline-flex;
+    padding: 15px 35px;
+    text-decoration: none;
+    transition: background-color 200ms ease-in-out;
+    align-items: center;
+    margin:1rem 0rem;
+    cursor: pointer;
   }
 
   /* Add style when button is focused or hovered */

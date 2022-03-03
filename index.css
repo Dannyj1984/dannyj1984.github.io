@@ -21,9 +21,9 @@
 
 /*grid layout*/
 .main {grid-area: main;}
-.card1 { grid-area: card1;}
-.card2 { grid-area: card2;}
-.card3 { grid-area: card3;}
+.grid-item1 { grid-area: grid-item1;}
+.grid-item2 { grid-area: grid-item2;}
+.grid-item3 { grid-area: grid-item3;}
 .footer {grid-area: footer;}
 
 body{
@@ -50,13 +50,14 @@ input[type="checkbox"]:checked ~ .modal-background {
 
 .grid-container {
   display: grid;
-  row-gap: 20px;
   grid-template-areas:
-      'main'
-      'grid-item'
-      'grid-item'
-      'grid-item'
-      'footer';
+  'main'
+  'grid-item1'
+  'grid-item2'
+  'grid-item3'
+  'footer';
+  gap: 20px;
+  padding: 10px;
 }
 
 .center {
@@ -316,6 +317,10 @@ margin:1rem 0rem;
 cursor: pointer;
 }
 
+.footer {
+  color:white
+}
+
 
 
 /* Responsiveness */
@@ -346,13 +351,11 @@ cursor: pointer;
 
   .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-template-areas:
-      'main main main'
-      'grid-item grid-item grid-item'
-      'footer footer footer';
-    gap: 10px;
-    padding: 10px;
+    grid-template-columns: auto auto auto;
+    grid-template-areas: 
+    'main main main'
+    'grid-item1 grid-item2  grid-item3'
+    'footer footer footer';
   }
 
   .panel {
@@ -379,6 +382,8 @@ cursor: pointer;
 }
 
 .card {
+  height: 100%;
+  margin: 2rem;
   animation: duration 2s;
   animation-name: cardslidein;
   animation-iteration-count: 1;
@@ -404,14 +409,13 @@ cursor: pointer;
   width: 80%;
 }
   
-  .footer {
-    position: absolute;
-    color: white;
-    bottom: 0;
-    width: 100%;
-    margin-top: 2.5rem;
-    height: 2.5rem;            /* Footer height */
-  }
+.footer {
+  color: white;
+  bottom: 0;
+  width: 100%;
+  margin-top: 2.5rem;
+  height: 2.5rem;            /* Footer height */
+}
 
   .booking-button {
     animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
