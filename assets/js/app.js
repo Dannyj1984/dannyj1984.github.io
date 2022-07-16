@@ -41,7 +41,13 @@ window.addEventListener('beforeinstallprompt', function (e) {
 
 function showAddToHomeScreen() {
 	var a2hsBtn = document.querySelector("#infoModal");
-	a2hsBtn.style.display = "block";
+	var installed = sessionStorage.getItem('installed');
+	if(installed === 'true'){
+		a2hsBtn.style.display = "hide";
+	} else {
+		a2hsBtn.style.display = "block";
+	}
+	
 	a2hsBtn.addEventListener("click", addToHomeScreen);
 }
 
