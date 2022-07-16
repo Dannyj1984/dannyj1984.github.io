@@ -68,6 +68,10 @@ if('serviceWorker' in navigator){
 	  .catch(err => console.log('service worker not registered', err));
   }
 
+  const rememberUser = () => {
+	sessionStorage.setItem('installed', 'true');
+}
+
 // if ("serviceWorker" in navigator) {
 // 	window.addEventListener("load", function() {
 // 	navigator.serviceWorker
