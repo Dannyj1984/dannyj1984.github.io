@@ -1,5 +1,3 @@
-alert('Hi');
-
 function closeInfoModal() {
 	if (window.navigator.standalone) {
 		$('#infoModal').modal('hide');
