@@ -75,7 +75,7 @@ if('serviceWorker' in navigator){
   }
 
   const rememberUser = () => {
-	sessionStorage.setItem('installed', 'true');
+	localStorage.setItem('installed', 'true');
 }
 
 // if ("serviceWorker" in navigator) {
